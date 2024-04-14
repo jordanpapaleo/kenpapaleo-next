@@ -16,7 +16,7 @@
 
 @layer components {
   .btn {
-    @apply bg-transparent border-2 border-content text-content block py-3 text-center uppercase cursor-pointer px-6 font-bold tracking-widest font-serif;
+    @apply bg-transparent border-2 border-content text-content py-3 text-center uppercase cursor-pointer px-6 font-bold tracking-widest font-serif;
     @apply transition hover:border-transparent hover:bg-content hover:text-neutral-100;
   }
 }

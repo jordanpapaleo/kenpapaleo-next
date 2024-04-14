@@ -1,5 +1,5 @@
-import type { Config } from "tailwindcss";
-import plugin from 'tailwindcss/plugin';
+import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
 
 const CARBON = '#262626'
 const SLATE = '#292929'
@@ -7,8 +7,8 @@ const AMBER = '#E77E0D'
 
 const config: Config = {
   content: [
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -18,14 +18,17 @@ const config: Config = {
         serif: ['Helvetica Neue', 'Arial', 'sans-serif'],
       },
       fontSize: {
-        p: ['1.25rem', {
-          fontWeight: 400,
-          letterSpacing: '0.36px',
-          lineHeight: '1.575'
-        }]
+        p: [
+          '1.25rem',
+          {
+            fontWeight: 400,
+            letterSpacing: '0.36px',
+            lineHeight: '1.575',
+          },
+        ],
       },
       tracking: {
-        widest: '0.14em'
+        widest: '0.14em',
       },
       colors: {
         amber: {
@@ -40,13 +43,14 @@ const config: Config = {
         primary: AMBER,
         content: {
           DEFAULT: SLATE,
-          dark: CARBON
-        }
+          dark: CARBON,
+        },
       },
     },
   },
   // https://tailwindcss.com/docs/plugins
   plugins: [
+    require('@xpd/tailwind-3dtransforms'),
     plugin(({ addComponents }) => {
       addComponents({
         '.h1': {
@@ -66,6 +70,16 @@ const config: Config = {
           textTransform: 'none',
           letterSpacing: '0em',
         },
+        '.primary-nav': {
+          color: '#fff',
+          fontFamily: 'Helvetica Neue',
+          fontSize: '125px',
+          fontWeight: '600',
+          lineHeight: '1.2',
+          '&:hover': {
+            color: AMBER,
+          },
+        },
         // '.btn-blue': {
         //   backgroundColor: '#3490dc',
         //   color: '#fff',
@@ -81,7 +95,7 @@ const config: Config = {
         //   },
         // },
       })
-    })
+    }),
   ],
-};
-export default config;
+}
+export default config
